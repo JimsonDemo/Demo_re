@@ -23,7 +23,7 @@
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2023-09-18T12:26:42.906Z",
+  "updateTime" : "2023-09-18T12:30:24.281Z",
   "objectRefs" : [ {
     "id" : "dhgz8ghknMai0LKvfuSZWV",
     "name" : "Business Service2",
@@ -36,13 +36,7 @@
       "repoInfo" : {
         "repoHandle" : "0125CB27000000000003"
       },
-      "contextAttributes" : [ {
-        "name" : "id",
-        "value" : "@1"
-      }, {
-        "name" : "0125CB28000000000003",
-        "value" : "dhgz8ghknMai0LKvfuSZWV@Oauth2.0"
-      } ],
+      "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
         "contentType" : "JSON",
