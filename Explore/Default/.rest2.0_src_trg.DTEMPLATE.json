@@ -16,17 +16,17 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "new",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2023-09-18T12:26:42.904Z",
+  "updateTime" : "2023-09-18T16:54:03.273Z",
   "objectRefs" : [ {
-    "id" : "34hKrdkR3Iwjf1LyQVpaCT",
-    "name" : "Rest_oauth_connection",
+    "id" : "8C8CdZp5241ihLW9p2bx0L",
+    "name" : "Rest_oauth_connection_2",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -34,7 +34,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "0125CB0B000000000002"
+        "repoHandle" : "0125CB0B000000000004"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
