@@ -16,14 +16,14 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "This is new change",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2023-09-18T12:30:24.281Z",
+  "updateTime" : "2023-09-18T16:43:21.563Z",
   "objectRefs" : [ {
     "id" : "dhgz8ghknMai0LKvfuSZWV",
     "name" : "Business Service2",
