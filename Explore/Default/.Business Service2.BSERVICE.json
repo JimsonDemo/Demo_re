@@ -17,6 +17,9 @@
       }, {
         "name" : "0125CB28000000000003",
         "value" : "dhgz8ghknMai0LKvfuSZWV@Oauth2.0"
+      }, {
+        "name" : "0125CB28000000000004",
+        "value" : "dhgz8ghknMai0LKvfuSZWV@Oauth2.03"
       } ],
       "additionalInfo" : {
         "description" : "",
@@ -26,10 +29,10 @@
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2023-09-18T12:26:42.905Z",
+  "updateTime" : "2024-01-17T16:50:48.845Z",
   "objectRefs" : [ {
-    "id" : "34hKrdkR3Iwjf1LyQVpaCT",
-    "name" : "Rest_oauth_connection",
+    "id" : "8C8CdZp5241ihLW9p2bx0L",
+    "name" : "Rest_oauth_connection_2",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -37,7 +40,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "0125CB0B000000000002"
+        "repoHandle" : "0125CB0B000000000004"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
