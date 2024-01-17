@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>iaa-gt-843491-2023-07-04T15:57:12.141Z::pd.xml</types1:EntryId>
+      <types1:EntryId>WTNeJ91pqrzYLnz-gt-5715812-2023-09-18T16:57:07.478Z::pd.xml</types1:EntryId>
       <types1:Name>Process1</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description/>
@@ -10,13 +10,11 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jimsong</types1:CreatedBy>
-      <types1:CreationDate>2023-07-04T15:57:12Z</types1:CreationDate>
-      <types1:ModifiedBy/>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jimsong</types1:PublishedBy>
-      <types1:PublicationDate>2023-07-04T15:57:17Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/spi.Process1/Process1.pd.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2023-09-18T16:57:07Z</types1:CreationDate>
+      <types1:ModifiedBy>jimsonDemo</types1:ModifiedBy>
+      <types1:ModificationDate>2023-09-19T05:39:26Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -65,5 +63,5 @@
       <types1:GUID>4yzU54Ck98TeIsujg8d1uF</types1:GUID>
       <types1:DisplayName>Process1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-09-18T12:26:39.747Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-01-17T16:58:07.451Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
