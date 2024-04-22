@@ -17,16 +17,16 @@
       } ],
       "additionalInfo" : {
         "description" : "",
-        "contentType" : null,
+        "contentType" : "JSON",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2023-10-27T13:41:22.836Z",
+  "updateTime" : "2024-04-22T18:39:31.165Z",
   "objectRefs" : [ {
-    "id" : "8C8CdZp5241ihLW9p2bx0L",
-    "name" : "Rest_oauth_connection_2",
+    "id" : "0nDZvKBkCItc229fTHBAUm",
+    "name" : "test on the swagger",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -34,7 +34,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "0125CB0B000000000004"
+        "repoHandle" : "0125CB0B00000000000M"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
@@ -45,8 +45,8 @@
     },
     "path" : "/SYS"
   }, {
-    "id" : "byRlTO0KtgEk5Hosb0fZQF",
-    "name" : "ffdemo",
+    "id" : "keKeaGtuEMjjIDdSE8zamc",
+    "name" : "jimson_sqlserver",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -54,7 +54,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "0125CB0B000000000003"
+        "repoHandle" : "0125CB0B00000000000L"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
