@@ -1,0 +1,48 @@
+{
+  "objectInfo" : {
+    "id" : "9emyJxrtKmQhbGlXwdQKcq",
+    "name" : "m_efpia_cust_ind",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0125CB1700000000003I"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2024-08-21T09:29:47.494Z",
+  "objectRefs" : [ {
+    "id" : "d7xJVJK5RK9gN8jIQcLTML",
+    "name" : "Quotes_Concat",
+    "type" : "UDF",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0125CB41000000000006"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/EFPIA"
+  } ]
+}

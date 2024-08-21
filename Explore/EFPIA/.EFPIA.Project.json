@@ -1,0 +1,23 @@
+{
+  "objectInfo" : {
+    "id" : "foDtvQQEpYAcQ61raCS40V",
+    "name" : "EFPIA",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2024-08-21T09:29:47.495Z",
+  "objectRefs" : [ ]
+}
