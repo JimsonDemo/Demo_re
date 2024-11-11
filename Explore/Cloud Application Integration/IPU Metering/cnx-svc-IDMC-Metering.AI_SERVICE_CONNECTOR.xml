@@ -1,0 +1,372 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>hu1tgq695kchzt1-gt-269387-2024-08-21T13:35:33.115Z::svc.xml</types1:EntryId>
+      <types1:Name>cnx-svc-IDMC-Metering</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-08-21T13:35:33Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="cnx-svc-IDMC-Metering"
+                            label=""
+                            name="cnx-svc-IDMC-Metering"
+                            uuid="4ad7eb37-acaf-47f2-9f6b-56d581c9922f">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="loginHost"
+                                    required="true"
+                                    testWith="dm-us.informaticacloud.com"
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="podHost"
+                                    required="true"
+                                    testWith="na1.dm-us.informaticacloud.com"
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="user"
+                                    required="true"
+                                    testWith="jbowring@informatica.com.cdpapj"
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="true"
+                                    name="password"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description=""
+                                    masked="false"
+                                    name="callbackUrl"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="Login"
+                       maxRedirects="100"
+                       name="Login"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$loginHost}/saas/public/core/v3/login"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+    "username": "{$user}",
+    "password": "{$password}"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="loginResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">login-response</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="ExportData"
+                       maxRedirects="100"
+                       name="ExportData"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="startDate"
+                                required="true"
+                                testWith="2023-02-15T00:00:00Z"
+                                type="datetime"/>
+                     <parameter name="endDate"
+                                required="true"
+                                testWith="2023-02-21T00:00:00Z"
+                                type="datetime"/>
+                     <parameter name="sessionID"
+                                required="true"
+                                testWith="3jqnDoIe94NdfBrpmrfNiy"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$podHost}/saas/public/core/v3/license/metering/ExportMeteringDataAllLinkedOrgsAcrossRegion"
+                                        verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="INFA-SESSION-ID">{$sessionID}</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+    "startDate":"{$startDate}",
+    "endDate":"{$endDate}",
+    "callbackUrl":"{$callbackUrl}"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="exportResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">export-response</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="ExportStatus"
+                       maxRedirects="100"
+                       name="ExportStatus"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="jobID"
+                                required="false"
+                                testWith="8hX0E72ZNVvln4nGpyshOO"
+                                type="string"/>
+                     <parameter name="sessionID"
+                                required="true"
+                                testWith="3jqnDoIe94NdfBrpmrfNiy"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$podHost}/saas/public/core/v3/license/metering/ExportMeteringData/{$jobID}"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="INFA-SESSION-ID">{$sessionID}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="statusResponse"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">status-response</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="DownloadData"
+                       maxRedirects="100"
+                       name="DownloadData"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="jobID"
+                                required="true"
+                                testWith="8hX0E72ZNVvln4nGpyshOO"
+                                type="string"/>
+                     <parameter name="sessionID"
+                                required="true"
+                                testWith="3jqnDoIe94NdfBrpmrfNiy"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$podHost}/saas/public/core/v3/license/metering/ExportMeteringData/{$jobID}/download"
+                                        verb="GET">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="INFA-SESSION-ID">{$sessionID}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field attachments="true"
+                            description=""
+                            name="dataFile"
+                            type="attachment"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="login-response">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="userInfo"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">login-userInfo</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="products"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">login-products</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="login-userInfo">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="orgName" nullable="true" required="false" type="string"/>
+                     <field name="parentOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="groups"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">$any</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="sessionId" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="login-products">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="baseApiUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="export-response">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="jobId" nullable="true" required="false" type="string"/>
+                     <field name="endDate" nullable="true" required="false" type="datetime"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="meterId" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="callbackUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="selectedOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="userId" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="startDate"
+                            nullable="true"
+                            required="false"
+                            type="datetime"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="status-response">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="jobId" nullable="true" required="false" type="string"/>
+                     <field name="endDate" nullable="true" required="false" type="datetime"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="meterId" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="callbackUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="selectedOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="userId" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="startDate"
+                            nullable="true"
+                            required="false"
+                            type="datetime"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>8YtH3RzBlZSbRAMj4Ilfgr</types1:GUID>
+      <types1:DisplayName>cnx-svc-IDMC-Metering</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T08:40:17.745Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

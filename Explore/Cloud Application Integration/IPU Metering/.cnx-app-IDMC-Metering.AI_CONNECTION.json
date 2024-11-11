@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "0JwoR41FuBLiSbuncGmBgm",
+    "name" : "cnx-app-IDMC-Metering",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "RtO3M4WwOC2XZPn-gt-267612-2024-08-21T13:35:33.709Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T08:40:18.339Z",
+  "objectRefs" : [ {
+    "id" : "8YtH3RzBlZSbRAMj4Ilfgr",
+    "name" : "cnx-svc-IDMC-Metering",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hu1tgq695kchzt1-gt-269387-2024-08-21T13:35:33.115Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration/IPU Metering"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

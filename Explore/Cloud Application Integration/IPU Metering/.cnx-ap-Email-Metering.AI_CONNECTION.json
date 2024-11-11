@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "7ad7r8Ihd4XlFdFzhrRWAT",
+    "name" : "cnx-ap-Email-Metering",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bfTlyTjFIMeINci-gt-269378-2024-08-21T13:35:33.029Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T08:40:18.338Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

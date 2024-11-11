@@ -1,0 +1,54 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>RtO3M4WwOC2XZPn-gt-267612-2024-08-21T13:35:33.709Z::conn.xml</types1:EntryId>
+      <types1:Name>cnx-app-IDMC-Metering</types1:Name>
+      <types1:ParentFlowIds>0qjATO9pH8sVYx8-gt-267622-2024-08-21T13:35:33.991Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-08-21T13:35:34Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="cnx-app-IDMC-Metering"
+                     label="cnx-app-IDMC-Metering"
+                     name="cnx-app-IDMC-Metering">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false"
+                          name="loginHost"
+                          value="dm-us.informaticacloud.com"/>
+               <attribute encrypted="false"
+                          name="podHost"
+                          value="na1.dm-us.informaticacloud.com"/>
+               <attribute encrypted="false"
+                          name="user"
+                          value="jbowring@informatica.com.cdpapj"/>
+               <attribute encrypted="true" name="password" value=""/>
+               <attribute encrypted="false" name="callbackUrl" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/cnx_svc_IDMC_Metering/cnx_svc_IDMC_Metering_svcDef.xml"
+                               guid="8YtH3RzBlZSbRAMj4Ilfgr"
+                               name="cnx-svc-IDMC-Metering"
+                               supportsConnectionTest="false"
+                               uuid="4ad7eb37-acaf-47f2-9f6b-56d581c9922f">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>0JwoR41FuBLiSbuncGmBgm</types1:GUID>
+      <types1:DisplayName>cnx-app-IDMC-Metering</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T08:40:17.808Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

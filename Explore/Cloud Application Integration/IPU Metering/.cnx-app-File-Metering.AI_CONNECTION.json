@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "4O6sqLk6yQ8c0U9E6oArsC",
+    "name" : "cnx-app-File-Metering",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "94FDsZvEIAkRtO3-gt-269369-2024-08-21T13:35:32.979Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T08:40:18.339Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

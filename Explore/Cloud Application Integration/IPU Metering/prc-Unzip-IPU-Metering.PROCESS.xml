@@ -1,0 +1,120 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>lwDxomUhGdwOLIF-gt-269396-2024-08-21T13:35:33.18Z::pd.xml</types1:EntryId>
+      <types1:Name>prc-Unzip-IPU-Metering</types1:Name>
+      <types1:ParentFlowIds>0qjATO9pH8sVYx8-gt-267622-2024-08-21T13:35:33.991Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:Main Windows Secure Agent,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-08-21T13:35:33Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="prc-Unzip-IPU-Metering"
+                  name="prc-Unzip-IPU-Metering"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.agent:Main Windows Secure Agent,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="filepath" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="meterData" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>Main Windows Secure Agent</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lem9qidp" targetId="lem9qido"/>
+               </start>
+               <service id="lem9qido">
+                  <title>Unzip the report</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="command" source="formula">
+                        <expression language="XQuery">concat('PowerShell.exe -Command "Expand-Archive -Force ', "'", $input.filepath, "' '", replace($input.filepath, '.zip', ''), "'")</expression>
+                     </parameter>
+                     <parameter name="workingDirPath" source="constant">C:/</parameter>
+                  </serviceInput>
+                  <link id="lerzu2i8" targetId="lerzu2i7"/>
+               </service>
+               <service id="lerzu2i7">
+                  <title>Merge the Org Reports</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="command" source="formula">
+                        <expression language="XQuery">concat('PowerShell.exe -Command "Get-ChildItem -Path ', "'", replace($input.filepath, '.zip', ''), "'", ' -Filter *.csv | Select-Object -ExpandProperty FullName | Import-Csv | Export-Clixml -Path ', "'", replace($input.filepath, '.zip', ''), '/merged.xml', "'", '"')</expression>
+                     </parameter>
+                     <parameter name="workingDirPath" source="constant">C:/</parameter>
+                  </serviceInput>
+                  <link id="lerzu2i9" targetId="lem9qien"/>
+               </service>
+               <service id="lerzu2hj">
+                  <title>Clean up the zip folder</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="command" source="formula">
+                        <expression language="XQuery">concat('PowerShell.exe -Command "Remove-Item ', "'", replace($input.filepath, '.zip', ''), "'",' -Recurse"')</expression>
+                     </parameter>
+                     <parameter name="workingDirPath" source="constant">C:/</parameter>
+                  </serviceInput>
+                  <link id="les3l50y" targetId="les3l50x"/>
+               </service>
+               <service id="les3l50x">
+                  <title>Clean up the zip file</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="command" source="formula">
+                        <expression language="XQuery">concat('PowerShell.exe -Command "Remove-Item ', "'", $input.filepath, "'",' -Recurse"')</expression>
+                     </parameter>
+                     <parameter name="workingDirPath" source="constant">C:/</parameter>
+                  </serviceInput>
+                  <link id="les3l50z" targetId="c"/>
+               </service>
+               <assignment id="lem9qien">
+                  <title>Read the meter data</title>
+                  <operation source="formula" to="output.meterData">
+                     <expression language="XQuery">doc(replace($input.filepath, '.zip', '') || '/merged.xml')</expression>
+                  </operation>
+                  <link id="lerzu2hk" targetId="lerzu2hj"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>52DRUX2qee5dGa7eM6gfe8</types1:GUID>
+      <types1:DisplayName>prc-Unzip-IPU-Metering</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T08:40:17.711Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

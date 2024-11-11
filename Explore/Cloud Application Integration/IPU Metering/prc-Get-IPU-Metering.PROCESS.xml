@@ -1,0 +1,297 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>0qjATO9pH8sVYx8-gt-267622-2024-08-21T13:35:33.991Z::pd.xml</types1:EntryId>
+      <types1:Name>prc-Get-IPU-Metering</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-08-21T13:35:34Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="prc-Get-IPU-Metering"
+                  name="prc-Get-IPU-Metering"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="Status" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">Not Started</option>
+                  </options>
+               </field>
+               <field description="" name="FileTask" type="reference">
+                  <options>
+                     <option name="referenceTo">cnx-app-File-Metering:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">4O6sqLk6yQ8c0U9E6oArsC</option>
+                  </options>
+               </field>
+               <field description="" name="TotalIPUs" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="AllocatedIPUs" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="SendAlert" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="OrgID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="EmailTask" type="reference">
+                  <options>
+                     <option name="referenceTo">cnx-ap-Email-Metering:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">7ad7r8Ihd4XlFdFzhrRWAT</option>
+                  </options>
+               </field>
+               <field description="" name="ExpectedIPUs" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lef5c8mj" targetId="lef5c8mi"/>
+               </start>
+               <milestone id="lef5c8mi">
+                  <title>Return a 200 OK status</title>
+                  <link id="lerx9ntm" targetId="lerx9ntl"/>
+               </milestone>
+               <assignment id="lerx9ntl">
+                  <title>Set the Allocated IPUs and Org ID</title>
+                  <operation source="constant" to="temp.AllocatedIPUs">60</operation>
+                  <link id="lerx9ntn" targetId="lef5c8i2"/>
+               </assignment>
+               <service id="lef5c8i2">
+                  <title>Login to IDMC</title>
+                  <serviceName>cnx-app-IDMC-Metering:Login</serviceName>
+                  <serviceGUID>0JwoR41FuBLiSbuncGmBgm</serviceGUID>
+                  <serviceInput/>
+                  <link id="lef5c8ia" targetId="lef5c8i9"/>
+               </service>
+               <service id="lef5c8i9">
+                  <title>Run IPU Report</title>
+                  <serviceName>cnx-app-IDMC-Metering:ExportData</serviceName>
+                  <serviceGUID>0JwoR41FuBLiSbuncGmBgm</serviceGUID>
+                  <serviceInput>
+                     <parameter name="startDate" source="formula">
+                        <expression language="XQuery">let $year := fn:year-from-date(fn:current-date())
+let $month := if( fn:month-from-date(fn:current-date()) &lt; 10) then ('0' || fn:month-from-date(fn:current-date())) else (fn:month-from-date(fn:current-date()))
+
+return $year || '-' || $month || '-01T00:00:00Z'</expression>
+                     </parameter>
+                     <parameter name="endDate" source="formula">
+                        <function name="datetime_from_today">
+                           <arg name="days">0</arg>
+                           <arg name="hours">0</arg>
+                           <arg name="minutes">0</arg>
+                           <arg name="busDays">false</arg>
+                        </function>
+                     </parameter>
+                     <parameter name="sessionID" source="field" updatable="true">output.loginResponse[1]/userInfo[1]/sessionId</parameter>
+                  </serviceInput>
+                  <link id="lef5c8je" targetId="lef5c8jd"/>
+               </service>
+               <container id="lef5c8jd" type="exclusive">
+                  <title>Status</title>
+                  <flow id="lef5c8jh">
+                     <service id="lef5c8lx">
+                        <title>Download the report</title>
+                        <serviceName>cnx-app-IDMC-Metering:DownloadData</serviceName>
+                        <serviceGUID>0JwoR41FuBLiSbuncGmBgm</serviceGUID>
+                        <serviceInput>
+                           <parameter name="jobID" source="field" updatable="true">output.exportResponse[1]/jobId</parameter>
+                           <parameter name="sessionID" source="field" updatable="true">output.loginResponse[1]/userInfo[1]/sessionId</parameter>
+                        </serviceInput>
+                        <link id="lem0ymow" targetId="lem0ymov"/>
+                     </service>
+                     <service id="lem0ymoi">
+                        <title>Save the report</title>
+                        <serviceName>cnx-app-File-Metering:FileWriter</serviceName>
+                        <serviceGUID>4O6sqLk6yQ8c0U9E6oArsC</serviceGUID>
+                        <serviceInput>
+                           <parameter name="fileWriteTask" source="field" updatable="true">temp.FileTask</parameter>
+                           <parameter name="attachment" source="field" updatable="true">output.dataFile</parameter>
+                        </serviceInput>
+                        <link id="lem577hz" targetId="lem577hy"/>
+                     </service>
+                     <assignment id="lem0ymov">
+                        <title>Prepare the save file</title>
+                        <operation source="constant" to="temp.FileTask[1]/format">Attachment</operation>
+                        <operation source="formula" to="temp.FileTask[1]/fileName">
+                           <expression language="XQuery">util:getProcessId() || '.zip'</expression>
+                        </operation>
+                        <link id="lem0ymox" targetId="lem0ymoi"/>
+                     </assignment>
+                     <assignment id="lerx84ga">
+                        <title>Sum the total IPUs</title>
+                        <operation source="formula" to="temp.TotalIPUs">
+                           <expression language="XQuery">round(sum($output.meterData//*:S[@N = "IPU"]), 2)</expression>
+                        </operation>
+                        <operation source="formula" to="temp.ExpectedIPUs">
+                           <expression language="XQuery">round(($temp.AllocatedIPUs div 30) * fn:day-from-date(fn:current-date()), 2)</expression>
+                        </operation>
+                        <link id="lerx9nw7" targetId="lerx9nw6"/>
+                     </assignment>
+                     <assignment id="lerx9nw6">
+                        <title>Check if Alert Should be Sent</title>
+                        <operation source="formula" to="temp.SendAlert">
+                           <expression language="XQuery">let $alert := if(ceiling($temp.TotalIPUs) &gt; ceiling($temp.ExpectedIPUs)) then ('Yes') else ('No')
+
+return $alert</expression>
+                        </operation>
+                        <link id="lerx9nx8" targetId="lerx9nx7"/>
+                     </assignment>
+                     <subflow id="lem577hy">
+                        <title>Unzip the report</title>
+                        <subflowGUID>52DRUX2qee5dGa7eM6gfe8</subflowGUID>
+                        <subflowPath>prc-Unzip-IPU-Metering</subflowPath>
+                        <runForEach>false</runForEach>
+                        <input>
+                           <parameter name="filepath" source="field" updatable="true">output.fileInfo[1]/path</parameter>
+                        </input>
+                        <outputDef>
+                           <field name="meterData" type="reference">
+                              <options>
+                                 <option name="referenceTo">$po:$any</option>
+                                 <option name="required">false</option>
+                                 <option name="isCopy">true</option>
+                              </options>
+                           </field>
+                        </outputDef>
+                        <link id="lerx84gb" targetId="lerx84ga"/>
+                     </subflow>
+                     <container id="lerx9nx7" type="exclusive">
+                        <title>SendAlert</title>
+                        <flow id="lerx9nxa">
+                           <assignment id="lerzm78w">
+                              <title>Prepare the Email</title>
+                              <operation source="constant" to="temp.EmailTask[1]/subject">Informatica Cloud IPU Usage Alert</operation>
+                              <operation source="constant" to="temp.EmailTask[1]/to">admin@M365x791348.onmicrosoft.com</operation>
+                              <operation source="constant" to="temp.EmailTask[1]/contentType">text/plain</operation>
+                              <operation source="formula" to="temp.EmailTask[1]/body">
+                                 <expression language="XQuery">'Alert! Your Informatica Cloud IPU usage is higher than expected! Current usage is ' || $temp.TotalIPUs || ' IPUs which is greater than the expected ' || $temp.ExpectedIPUs  || ' IPUs for month to date.'</expression>
+                              </operation>
+                              <link id="lerzm7a9" targetId="lerzm7a8"/>
+                           </assignment>
+                           <service id="lerzm7a8">
+                              <title>Send the Email</title>
+                              <serviceName>cnx-ap-Email-Metering:sendEmailService</serviceName>
+                              <serviceGUID>7ad7r8Ihd4XlFdFzhrRWAT</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="emailTaskInput" source="field" updatable="true">temp.EmailTask</parameter>
+                              </serviceInput>
+                              <link id="lerzm7bm" targetId="lerzm7bl"/>
+                           </service>
+                           <end id="lerzm7bl">
+                              <title>End 2</title>
+                           </end>
+                        </flow>
+                        <flow id="lerx9nxd">
+                           <end id="lerx9nyd">
+                              <title>End 1</title>
+                           </end>
+                        </flow>
+                        <link id="lerx9nx9" targetId="lerx9nxa" type="containerLink">
+                           <condition source="formula">
+                              <function name="contains">
+                                 <arg name="left">{$temp.SendAlert}</arg>
+                                 <arg name="right">Yes</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="lerx9nxc" targetId="lerx9nxd" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <flow id="lef5c8jk">
+                     <wait id="lef5c8jy">
+                        <title>Wait 10 secs</title>
+                        <duration source="formula">
+                           <function name="duration_expression">
+                              <arg name="value">10</arg>
+                              <arg name="scale">S</arg>
+                              <arg name="businessDays"/>
+                           </function>
+                        </duration>
+                        <link id="lef5c8k8" targetId="lef5c8k7"/>
+                     </wait>
+                     <service id="lef5c8k7">
+                        <title>Get the export status</title>
+                        <serviceName>cnx-app-IDMC-Metering:ExportStatus</serviceName>
+                        <serviceGUID>0JwoR41FuBLiSbuncGmBgm</serviceGUID>
+                        <serviceInput>
+                           <parameter name="jobID" source="field" updatable="true">output.exportResponse[1]/jobId</parameter>
+                           <parameter name="sessionID" source="field" updatable="true">output.loginResponse[1]/userInfo[1]/sessionId</parameter>
+                        </serviceInput>
+                        <link id="lef5c8l6" targetId="lef5c8l5"/>
+                     </service>
+                     <assignment id="lef5c8l5">
+                        <title>Assignment to Status</title>
+                        <operation source="field" to="temp.Status">output.statusResponse[1]/status</operation>
+                        <link id="lef5c8lr" targetId="lef5c8lp"/>
+                     </assignment>
+                     <jumpTo id="lef5c8lp">
+                        <link id="lef5c8lq" targetId="lef5c8jd"/>
+                     </jumpTo>
+                  </flow>
+                  <link id="lef5c8jg" targetId="lef5c8jh" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.Status}</arg>
+                           <arg name="right">SUCCESS</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="lef5c8jj" targetId="lef5c8jk" type="containerLink"/>
+               </container>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>1e09d128-1fa2-4e1f-b531-d29ce60ba2a2</ns1:Id>
+               <ns1:Name>Run</ns1:Name>
+               <ns1:CreatedBy>jimsonDemo</ns1:CreatedBy>
+               <ns1:CreationDate>2024-08-21T13:35:34Z</ns1:CreationDate>
+               <ns1:ModifiedBy>jimsonDemo</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-08-21T13:35:34Z</ns1:ModificationDate>
+               <ns1:Data format="json">{}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>1JYmHZcQ1UOexP7H8RmMmS</types1:GUID>
+      <types1:DisplayName>prc-Get-IPU-Metering</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T08:40:17.938Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

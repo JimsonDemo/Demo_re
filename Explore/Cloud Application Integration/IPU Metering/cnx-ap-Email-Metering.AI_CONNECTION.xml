@@ -1,0 +1,60 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>bfTlyTjFIMeINci-gt-269378-2024-08-21T13:35:33.029Z::conn.xml</types1:EntryId>
+      <types1:Name>cnx-ap-Email-Metering</types1:Name>
+      <types1:ParentFlowIds>0qjATO9pH8sVYx8-gt-267622-2024-08-21T13:35:33.991Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-08-21T13:35:33Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="cnx-ap-Email-Metering"
+                     label="cnx-ap-Email-Metering"
+                     name="cnx-ap-Email-Metering">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="hostName" value="smtp.office365.com"/>
+               <attribute encrypted="false" name="port" value="25"/>
+               <attribute encrypted="false"
+                          name="testToAddress"
+                          value="admin@M365x11274187.onmicrosoft.com"/>
+               <attribute encrypted="false"
+                          name="fromAddress"
+                          value="admin@M365x11274187.onmicrosoft.com"/>
+               <attribute encrypted="false" name="Authentication" value="Enable"/>
+               <attribute encrypted="false"
+                          name="username"
+                          value="admin@M365x11274187.onmicrosoft.com"/>
+               <attribute encrypted="true" name="password" value=""/>
+               <attribute encrypted="false" name="security" value="TLS"/>
+               <attribute encrypted="false" name="connectionTimeout" value="30000"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="false"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           supportsPublishSkipMetadataRefresh="false"
+                           type="Email"
+                           uuid="9a8a03d0-0437-46c4-bedf-70acb4173c1f">
+               <description>Provides connections to email host servers.</description>
+            </javaConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>7ad7r8Ihd4XlFdFzhrRWAT</types1:GUID>
+      <types1:DisplayName>cnx-ap-Email-Metering</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T08:40:17.728Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

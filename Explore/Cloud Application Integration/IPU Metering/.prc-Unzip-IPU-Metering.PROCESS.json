@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "52DRUX2qee5dGa7eM6gfe8",
+    "name" : "prc-Unzip-IPU-Metering",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "lwDxomUhGdwOLIF-gt-269396-2024-08-21T13:35:33.18Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T08:40:18.339Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

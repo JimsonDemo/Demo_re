@@ -1,0 +1,107 @@
+{
+  "objectInfo" : {
+    "id" : "1JYmHZcQ1UOexP7H8RmMmS",
+    "name" : "prc-Get-IPU-Metering",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0qjATO9pH8sVYx8-gt-267622-2024-08-21T13:35:33.991Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T08:40:18.340Z",
+  "objectRefs" : [ {
+    "id" : "7ad7r8Ihd4XlFdFzhrRWAT",
+    "name" : "cnx-ap-Email-Metering",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "bfTlyTjFIMeINci-gt-269378-2024-08-21T13:35:33.029Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration/IPU Metering"
+  }, {
+    "id" : "0JwoR41FuBLiSbuncGmBgm",
+    "name" : "cnx-app-IDMC-Metering",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "RtO3M4WwOC2XZPn-gt-267612-2024-08-21T13:35:33.709Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration/IPU Metering"
+  }, {
+    "id" : "52DRUX2qee5dGa7eM6gfe8",
+    "name" : "prc-Unzip-IPU-Metering",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "lwDxomUhGdwOLIF-gt-269396-2024-08-21T13:35:33.18Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration/IPU Metering"
+  }, {
+    "id" : "4O6sqLk6yQ8c0U9E6oArsC",
+    "name" : "cnx-app-File-Metering",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "94FDsZvEIAkRtO3-gt-269369-2024-08-21T13:35:32.979Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration/IPU Metering"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
