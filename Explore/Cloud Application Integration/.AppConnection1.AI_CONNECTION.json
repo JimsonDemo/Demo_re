@@ -14,15 +14,15 @@
       "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
-        "contentType" : null,
+        "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2024-11-11T09:10:47.029Z",
+  "updateTime" : "2024-11-11T09:27:29.222Z",
   "objectRefs" : [ {
-    "id" : "3jQsfFbbfe7cPaFRpnR96y",
+    "id" : "kDF5shSlYO5deQFIxRjq4E",
     "name" : "Taskflow test -04736761",
     "type" : "AI_SERVICE_CONNECTOR",
     "metadata" : {
@@ -31,16 +31,16 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "JKoJBUhtycotFgp-gt-1895010-2024-10-29T12:06:01.579Z::svc.xml"
+        "repoHandle" : "FShFdw8jIw8jIw8-gt-4799741-2024-11-11T09:17:45.507Z::svc.xml"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
-        "contentType" : "application/json; charset=utf-8",
+        "contentType" : null,
         "documentState" : "VALID"
       }
     },
-    "path" : "/Explore/Default"
+    "path" : "/Explore/Cloud Application Integration"
   } ],
   "readableFileExtension" : null,
   "readableFilePresent" : false

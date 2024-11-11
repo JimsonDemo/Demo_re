@@ -20,7 +20,7 @@
     }
   },
   "dataFileExtension" : "xml",
-  "updateTime" : "2024-11-11T09:10:47.030Z",
+  "updateTime" : "2024-11-11T09:27:29.222Z",
   "objectRefs" : [ {
     "id" : "3heK1RnSfLZiYyy4IUUuql",
     "name" : "AppConnection1",
@@ -36,7 +36,7 @@
       "contextAttributes" : null,
       "additionalInfo" : {
         "description" : "",
-        "contentType" : null,
+        "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
     },

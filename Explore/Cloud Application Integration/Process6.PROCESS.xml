@@ -14,7 +14,10 @@
       <types1:CreationDate>2024-11-11T09:03:55Z</types1:CreationDate>
       <types1:ModifiedBy>jimsonDemo</types1:ModifiedBy>
       <types1:ModificationDate>2024-11-11T09:10:12Z</types1:ModificationDate>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jimsonDemo</types1:PublishedBy>
+      <types1:PublicationDate>2024-11-11T09:27:03Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Process6/Process6.pd.xml</types1:PublishedContributionId>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
@@ -54,5 +57,5 @@
       <types1:GUID>25xSwWhGREKduhARpQcFgs</types1:GUID>
       <types1:DisplayName>Process6</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-11-11T09:10:46.764Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-11-11T09:27:29.049Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
