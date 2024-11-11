@@ -1,0 +1,49 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>48ueJEaaaaaaaaa-gt-4803160-2024-11-11T09:06:58.886Z::conn.xml</types1:EntryId>
+      <types1:Name>AppConnection1-1</types1:Name>
+      <types1:ParentFlowIds>E6WdyH72yIYmWR7-gt-4798483-2024-11-11T09:03:54.892Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:jimsonwindowvm</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-11-11T09:06:59Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jimsonDemo</types1:PublishedBy>
+      <types1:PublicationDate>2024-11-11T09:09:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AppConnection1-1/AppConnection1-1.conn.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AppConnection1"
+                     label="AppConnection1"
+                     name="AppConnection1-1">
+            <description/>
+            <tags>.agent:jimsonwindowvm</tags>
+            <agent>jimsonwindowvm</agent>
+            <attributes>
+               <attribute name="hostName" value="apse1.dm-ap.informaticacloud.com:443"/>
+               <attribute encrypted="false" name="username" value="jimsonDemo"/>
+               <attribute encrypted="true" name="password" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/Taskflow_test__04736761/Taskflow_test__04736761_svcDef.xml"
+                               guid="3jQsfFbbfe7cPaFRpnR96y"
+                               name="Taskflow_test_-04736761"
+                               supportsConnectionTest="false"
+                               uuid="fce651ce-a16a-4efb-ba8e-b00204dd9f7f">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>3heK1RnSfLZiYyy4IUUuql</types1:GUID>
+      <types1:DisplayName>AppConnection1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T09:10:46.628Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

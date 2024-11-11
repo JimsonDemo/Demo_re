@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "25xSwWhGREKduhARpQcFgs",
+    "name" : "Process6",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "E6WdyH72yIYmWR7-gt-4798483-2024-11-11T09:03:54.892Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T09:10:47.030Z",
+  "objectRefs" : [ {
+    "id" : "3heK1RnSfLZiYyy4IUUuql",
+    "name" : "AppConnection1",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "48ueJEaaaaaaaaa-gt-4803160-2024-11-11T09:06:58.886Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Cloud Application Integration"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

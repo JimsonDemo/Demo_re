@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "3heK1RnSfLZiYyy4IUUuql",
+    "name" : "AppConnection1",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "48ueJEaaaaaaaaa-gt-4803160-2024-11-11T09:06:58.886Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2024-11-11T09:10:47.029Z",
+  "objectRefs" : [ {
+    "id" : "3jQsfFbbfe7cPaFRpnR96y",
+    "name" : "Taskflow test -04736761",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "JKoJBUhtycotFgp-gt-1895010-2024-10-29T12:06:01.579Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Default"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

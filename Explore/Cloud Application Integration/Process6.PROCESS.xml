@@ -1,0 +1,58 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>E6WdyH72yIYmWR7-gt-4798483-2024-11-11T09:03:54.892Z::pd.xml</types1:EntryId>
+      <types1:Name>Process6</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jimsonDemo</types1:CreatedBy>
+      <types1:CreationDate>2024-11-11T09:03:55Z</types1:CreationDate>
+      <types1:ModifiedBy>jimsonDemo</types1:ModifiedBy>
+      <types1:ModificationDate>2024-11-11T09:10:12Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="25xSwWhGREKduhARpQcFgs"
+                  displayName="Process6"
+                  name="Process6"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m3csw446" targetId="m3csw445"/>
+               </start>
+               <service id="m3csw445">
+                  <title>Taskflow8Operation</title>
+                  <serviceName>AppConnection1-1:Taskflow8Operation</serviceName>
+                  <serviceGUID>3heK1RnSfLZiYyy4IUUuql</serviceGUID>
+                  <serviceInput/>
+                  <link id="m3csw447" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>25xSwWhGREKduhARpQcFgs</types1:GUID>
+      <types1:DisplayName>Process6</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-11-11T09:10:46.764Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
